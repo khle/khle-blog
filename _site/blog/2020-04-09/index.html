@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+        <title>Building an Eleventy site with PaperCSS</title>
+    </head>
+    <body>
+        <nav class="border fixed split-nav">
+            <div class="nav-brand">
+                <h3>
+                    <a href="/">khle.dev</a>
+                </h3>
+            </div>
+            <div class="collapsible">
+                <input id="collapsible1" type="checkbox" name="collapsible1">
+                <button>
+                    <label for="collapsible1">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                    </label>
+                </button>
+                <div class="collapsible-body">
+                    <ul class="inline">
+                        <li>
+                            <a href="/">Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="paper container">
+            <h5>Published on 2020-04-08</h5>
+<h4>Building an Eleventy site with PaperCSS</h4>
+<h6><code>Eleventy</code>, <code>PaperCSS</code></h6>
+<p>There are many awesome static site generators and CSS frameworks. But none impresses me more than <a href="https://www.11ty.dev">Eleventy</a> and <a href="https://www.getpapercss.com">PaperCSS</a>. They are both simple and elegant, and together seem like a perfect combination.</p>
+<p>In just a few hours, even I could get this site up and running. This is my primary goal as I don't want to spend too much time on making a &quot;blog website&quot;.</p>
+<p>To build one like this, just follow the following steps.</p>
+<p>From your Terminal or Console, install Eleventy:</p>
+<pre><code>$ npm install -g @11ty/eleventy
+</code></pre>
+<p>For my site, I want to have 3 areas: <code>blog</code>, <code>about this site</code> and <code>about me</code>. So I'll make 3 folders:</p>
+<pre><code>$ mkdir blog
+$ mkdir about-site
+$ mkdir about-me
+</code></pre>
+<p>For this site, I decide to have 2 layouts. So let's create a folder and the layout files.</p>
+<pre><code>$ mkdir _includes
+$ touch _includes/layout.njk
+$ touch _includes/article-layout.njk
+</code></pre>
+<p>The main page which lists all the articles and the 2 &quot;about&quot; pages should follow 1 layout. The article pages should follow the other. These 2 layouts are similar as I could have get by with just one. You might not need both. Anyway, here's a link to the full content of
+<a href="https://gist.github.com/khle/c0e2bda3a3b4b0bbc9e6e0469dd3cfcb">layout.njk</a>.</p>
+<p>Now comes the fun part which is we get to write with <code>markdown</code> syntax. Let's create the <code>about me</code> page.</p>
+<pre><code>$ touch about-me/index.md
+</code></pre>
+<p>and copy the following content</p>
+<pre><code>---
+layout: layout.njk
+pageTitle: About me
+---
+
+&lt;article class=&quot;article&quot;&gt;
+  &lt;h1 class=&quot;article-title&quot;&gt;About me&lt;/h1&gt;
+  &lt;p class=&quot;text-lead&quot;&gt;Hi, put your intro here&lt;/p&gt;
+  &lt;p&gt;Lorem...&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+<p>Next let's create the main page which is the page that lists all articles:</p>
+<pre><code>touch index.md
+</code></pre>
+<p>and copy the following content to it.</p>
+<script src="https://gist.github.com/khle/0036de9bdd94c18ab947f4737c35653b.js"></script>
+<p>The first line above allows my articles to be listed in reverse chronological order.</p>
+<p>Finally, to organize my blog articles in the file system, I keep them in sub-folders under the <code>blog</code> folder that was created earlier.</p>
+<pre><code>$ cd blog
+$ mkdir 2020-04-09
+$ cd ..
+$ touch blog/2020-04-09/index.md
+</code></pre>
+<p>and start writing</p>
+<pre><code>---
+layout: article-layout.njk
+title: Building an Eleventy site with PaperCSS
+date: 2020-04-09
+tags: post
+---
+##### Published on 2020-04-08
+#### Building an Eleventy site with PaperCSS
+###### `Eleventy`, `PaperCSS`
+Lorem...
+</code></pre>
+<hr>
+<p>Some tips:</p>
+<ol>
+<li>
+<p>Table
+You can use <a href="https://www.markdownguide.org/extended-syntax/">markdown extended syntax</a> to embed tables in your content. There is this <a href="https://www.tablesgenerator.com/markdown_tables">handy tool</a> to help out.</p>
+</li>
+<li>
+<p>If you need to have buttons to perform some actions we can use the following snippets:</p>
+</li>
+</ol>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;button class=&quot;article-meta&quot;&gt;&lt;a href=&quot;#&quot;&gt;Do something&lt;/a&gt;&lt;/button&gt;
+    &lt;button class=&quot;article-meta&quot;&gt;Do something else&lt;/button&gt;
+  &lt;/div&gt;
+</code></pre>
+<p>which results in</p>
+<div class="row">
+    <button class="article-meta"><a href="#">Do something</a></button>
+    <button class="article-meta">Do something else</button>
+</div>
+
+        </div>
+    </body>
+</html>

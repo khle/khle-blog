@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+        <title>Create a Docker Rust playground</title>
+    </head>
+    <body>
+        <nav class="border fixed split-nav">
+            <div class="nav-brand">
+                <h3>
+                    <a href="/">khle.dev</a>
+                </h3>
+            </div>
+            <div class="collapsible">
+                <input id="collapsible1" type="checkbox" name="collapsible1">
+                <button>
+                    <label for="collapsible1">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                    </label>
+                </button>
+                <div class="collapsible-body">
+                    <ul class="inline">
+                        <li>
+                            <a href="/">Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="paper container">
+            <h5>Published on 2020-04-09</h5>
+<h4>Create a Docker Rust playground</h4>
+<h6><code>Rust</code>, <code>Docker</code></h6>
+<p>As I start to learn Rust, in addition to the Rust playground, I want to create something more local. Docker seems like a good choice, but I don't want <a href="https://hub.docker.com/_/rust">1.8 GB image</a>.</p>
+<p>I found this <a href="https://github.com/justincormack/docker-alpine-rust/blob/master/Dockerfile">Docker file</a> (thanks <a href="https://github.com/justincormack">Justin Cormack</a>) which uses Alpine and what it creates is exactly what I need.</p>
+<p>First, I create a file called <code>Dockerfile</code> with the following content:</p>
+<pre><code>FROM alpine:edge
+RUN echo http:&quot;//dl-cdn.alpinelinux.org/alpine/edge/testing&quot; &gt;&gt; /etc/apk/repositories &amp;&amp; \
+  apk update &amp;&amp; apk upgrade &amp;&amp; apk add \
+  gcc musl-dev rust cargo
+</code></pre>
+<p>Once I have a Docker file, the next step is to build the image</p>
+<pre><code>$ docker build --tag alpinerust .
+</code></pre>
+<p>To verify the image has been built:</p>
+<pre><code>$ docker images
+</code></pre>
+<p>Now I can run it:</p>
+<pre><code>$ docker run --rm -it alpine /bin/sh
+</code></pre>
+<p>Now I get a prompt which indicates I'm inside a Linux Alpine machine. To verify that I can run Rust, type</p>
+<pre><code># cargo
+</code></pre>
+<p>All is good. When done, simply type <code>exit</code> at the Linux prompt. To run again repeat</p>
+<pre><code>$ docker run --rm -it alpine /bin/sh
+# cargo
+# exit
+</code></pre>
+
+        </div>
+    </body>
+</html>
