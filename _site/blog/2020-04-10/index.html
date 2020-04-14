@@ -51,7 +51,10 @@ RUN echo http:&quot;//dl-cdn.alpinelinux.org/alpine/edge/testing&quot; &gt;&gt; 
 <pre><code>$ docker images
 </code></pre>
 <p>Now I can run it:</p>
-<pre><code>$ docker run --rm -it alpine /bin/sh
+<pre><code>$ docker run --rm -it -e USER=%USERNAME% alpine /bin/sh
+</code></pre>
+<p>On Linux:</p>
+<pre><code>$ docker run --rm -it -e USER=$USER alpine /bin/sh
 </code></pre>
 <p>Now I get a prompt which indicates I'm inside a Linux Alpine machine. To verify that I can run Rust, type</p>
 <pre><code># cargo
