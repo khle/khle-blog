@@ -33,7 +33,12 @@ $ docker images
 
 Now I can run it:
 ```
-$ docker run --rm -it alpine /bin/sh
+$ docker run --rm -it -e USER=%USERNAME% alpine /bin/sh
+```
+
+On Linux:
+```
+$ docker run --rm -it -e USER=$USER alpine /bin/sh
 ```
 
 Now I get a prompt which indicates I'm inside a Linux Alpine machine. To verify that I can run Rust, type
