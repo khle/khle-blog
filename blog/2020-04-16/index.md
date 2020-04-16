@@ -89,3 +89,8 @@ Again, we will be prompted for the pass phrase and export password, twice. Now w
 The private key file is `myapp_private.pfx`. Do not share this file. Do share the public key file which is `publickey.cer`.
 
 In future post, we will see how to write SAML provider and consumer that make use of the X.509 certificates created here.
+
+References:
+1. [https://stackoverflow.com/questions/16480846/x-509-private-public-key#16481636](https://stackoverflow.com/questions/16480846/x-509-private-public-key#16481636)
+
+2. [https://www.componentspace.com/Forums/1578/SHA256-and-Converting-the-Cryptographic-Service-Provider-Type](https://www.componentspace.com/Forums/1578/SHA256-and-Converting-the-Cryptographic-Service-Provider-Type)
