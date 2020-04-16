@@ -1,7 +1,7 @@
 ---
 layout: article-layout.njk
 title: Create SAML-consumable X.509 private public key pair
-date: 2020-04-10
+date: 2020-04-16
 tags: post
 ---
 ##### Published on {{ date | date : '%Y-%m-%d' }}
