@@ -42,4 +42,4 @@ Then run
 $ docker exec -it hungry_shamir /bin/sh
 ```
 
-
+The nice thing is as we write more posts, all we have to do is running the command `eleventy`. The refresh the browser. The new posts will be reflected automatically.
