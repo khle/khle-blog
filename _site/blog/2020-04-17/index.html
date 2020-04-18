@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="../../images/favicon.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+        <title>Running a private blog using Eleventy and Docker</title>
+    </head>
+    <body>
+        <nav class="border fixed split-nav">
+            <div class="nav-brand">
+                <h3>
+                    <a href="/">khle.dev</a>
+                </h3>
+            </div>
+            <div class="collapsible">
+                <input id="collapsible1" type="checkbox" name="collapsible1">
+                <button>
+                    <label for="collapsible1">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                    </label>
+                </button>
+                <div class="collapsible-body">
+                    <ul class="inline">
+                        <li>
+                            <a href="/">Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="paper container">
+            <h5>Published on 2020-04-16</h5>
+<h4>Running a private blog using Eleventy and Docker</h4>
+<h6><code>Eleventy</code>, <code>Docker</code></h6>
+<p>Create a <code>Dockerfile</code> with one single line</p>
+<pre><code>FROM nginx:alpine
+</code></pre>
+<p>Then build the image using the command</p>
+<pre><code>$ docker build -t my-private-blog .
+</code></pre>
+<p>Now run with the following command</p>
+<pre><code>$ docker run -d -p 8000:80 -v c:/Workspace/Non-Obex/my-private-blog/_site:/usr/share/nginx/html my-private-blog
+</code></pre>
+<p>Let's explain each of the option:</p>
+<ul>
+<li><code>8000</code> is the port of the host machine. So later we will point the browser to http://localhost:8000</li>
+<li><code>80</code> is the port that <code>nginx</code> runs on</li>
+<li><code>c:/.../_site</code> is the folder where <code>Eleventy</code> generates the static <code>HTML</code> content.</li>
+<li><code>/usr/share/nginx/html</code> is the directory where <code>nginx</code> looks for the index file.</li>
+</ul>
+<p>If we need to run <code>sh</code> shell:</p>
+<pre><code>$ docker post
+</code></pre>
+<p>the look for the name in the output. It's usually 2 random words concat by an underscore. For example it might be something like <code>hungry_shamir</code>.</p>
+<p>Then run</p>
+<pre><code>$ docker exec -it hungry_shamir /bin/sh
+</code></pre>
+
+        </div>
+    </body>
+</html>
