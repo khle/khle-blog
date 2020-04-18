@@ -52,10 +52,10 @@
 <li><code>c:/.../_site</code> is the folder where <code>Eleventy</code> generates the static <code>HTML</code> content.</li>
 <li><code>/usr/share/nginx/html</code> is the directory where <code>nginx</code> looks for the index file.</li>
 </ul>
-<p>If we need to run <code>sh</code> shell:</p>
-<pre><code>$ docker post
+<p>If we need to run <code>sh</code> shell, run the command</p>
+<pre><code>$ docker ps
 </code></pre>
-<p>the look for the name in the output. It's usually 2 random words concat by an underscore. For example it might be something like <code>hungry_shamir</code>.</p>
+<p>then look for the name of the container in the output. It's usually 2 random words concat by an underscore. For example it might be something like <code>hungry_shamir</code>.</p>
 <p>Then run</p>
 <pre><code>$ docker exec -it hungry_shamir /bin/sh
 </code></pre>

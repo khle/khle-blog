@@ -30,11 +30,11 @@ Let's explain each of the option:
 * `c:/.../_site` is the folder where `Eleventy` generates the static `HTML` content.
 * `/usr/share/nginx/html` is the directory where `nginx` looks for the index file.
 
-If we need to run `sh` shell:
+If we need to run `sh` shell, run the command
 ```
-$ docker post
+$ docker ps
 ```
-the look for the name in the output. It's usually 2 random words concat by an underscore. For example it might be something like `hungry_shamir`.
+then look for the name of the container in the output. It's usually 2 random words concat by an underscore. For example it might be something like `hungry_shamir`.
 
 Then run
 
