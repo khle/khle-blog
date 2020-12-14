@@ -15,9 +15,20 @@ You can find me elsewhere on the Internet:
 <div class="row">
   <div class="col-3 col"></div>
   <div class="col-2 col" style="cursor:pointer;">
-    <a href="https://dev.to/codeprototype"><img class="no-border" src="../images/dev-icon.png" alt="Dev" height="42" width="42"></a></div>
-  <div class="col-2 col" style="cursor:pointer;"><img class="no-border" src="../images/medium-icon.png" alt="Medium" height="42" width="42"></div>
-  <div class="col-2 col" style="cursor:pointer;"><img class="no-border" src="../images/stackoverflow-icon.png" alt="Stackoverflow" height="42" width="42"></div>
+    <a href="https://dev.to/codeprototype">
+      <img class="no-border" src="../images/dev-icon.png" alt="Dev" height="42" width="42">
+    </a>
+  </div>
+  <div class="col-2 col" style="cursor:pointer;">
+    <a href="https://kevinle.medium.com">
+      <img class="no-border" src="../images/medium-icon.png" alt="Medium" height="42" width="42">
+    </a>
+  </div>
+  <div class="col-2 col" style="cursor:pointer;">
+    <a href="https://stackoverflow.com/users/1244013/kevin-le-khnle">
+      <img class="no-border" src="../images/stackoverflow-icon.png" alt="Stackoverflow" height="42" width="42">
+    </a>
+  </div>
   <div class="col-3 col"></div>
 </div>
 
