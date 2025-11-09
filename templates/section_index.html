@@ -19,12 +19,13 @@
 
     <!-- Loop through the pages within the blog section ONLY -->
     {% for page in blog_section.pages %}
-    <div class="badge secondary">
-        <!-- Assuming blog posts have dates, no 'N/A Date' check needed -->
-        {{ page.date | date(format="%Y-%m-%d") }}
+    <div class="blog-entry-line">
+        <div class="badge secondary blog-date">
+            {{ page.date | date(format="%Y-%m-%d") }}
+        </div>
+        
+        <a href="{{ page.permalink }}" class="blog-title-link">{{ page.title }}</a>
     </div>
-      
-    <a href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}
 
 {% endblock content %}

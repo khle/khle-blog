@@ -1,0 +1,20 @@
+/* Add this to your site's main CSS file (e.g., static/style.css) */
+
+.blog-entry-line {
+    display: flex;
+    align-items: center;
+    /* Increased spacing below each line */
+    margin-bottom: 25px; 
+}
+
+.blog-date {
+    /* Space between the date and the title on the same line */
+    margin-right: 15px; 
+}
+
+.blog-title-link {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
