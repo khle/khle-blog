@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!-- Set the specific page title if available in front-matter -->
+{% block title %}{{ page.title }} &mdash; {{ config.title }}{% endblock title %}
+
+<!-- Define the specific navigation links for general pages -->
+{% block nav_links %}
+    <li>
+        <a href="{{ get_url(path='/about-site/') }}">About this site</a>
+    </li>
+    <li>
+        <a href="{{ get_url(path='/about-me/') }}">About me</a>
+    </li>
+{% endblock nav_links %}
+
+<!-- Insert the page content -->
+{% block content %}
+    {{ page.content | safe }}
+{% endblock content %}
+

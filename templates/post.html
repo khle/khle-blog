@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<!-- Set the specific post title -->
+{% block title %}{{ page.title }} &mdash; {{ config.title }}{% endblock title %}
+
+<!-- Define the specific navigation links for blog posts (just "Back") -->
+{% block nav_links %}
+    <li>
+        <a href="{{ get_url(path='/') }}">Back</a>
+    </li>
+{% endblock nav_links %}
+
+<!-- Insert the post content -->
+{% block content %}
+    <!-- Use HTML tags instead of Markdown shorthand -->
+    <!-- Display the Blog Title -->
+    <h2>{{ page.title }}</h2>
+
+    <!-- Display the Published Date directly below it -->
+    <small>Published on {{ page.date | date(format="%Y-%m-%d") }}</small>
+    
+    <hr>
+    
+    <p>
+    {{ page.content | safe }}
+    </p>
+{% endblock content %}
+

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} &mdash; {{ config.title }}{% endblock title %}
+
+{% block nav_links %}
+    <li>
+        <a href="{{ get_url(path='/about-site/') }}">About this site</a>
+    </li>
+    <li>
+        <a href="{{ get_url(path='/about-me/') }}">About me</a>
+    </li>
+{% endblock nav_links %}
+
+{% block content %}
+    {{ section.content | safe }}
+
+    <!-- Retrieve only the pages from the specific 'blog' section -->
+    {% set blog_section = get_section(path="blog/_index.md") %}
+
+    <!-- Loop through the pages within the blog section ONLY -->
+    {% for page in blog_section.pages %}
+    <span class="badge secondary">
+        <!-- Assuming blog posts have dates, no 'N/A Date' check needed -->
+        {{ page.date | date(format="%Y-%m-%d") }}
+    </span>
+      
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+    {% endfor %}
+
+{% endblock content %}
+

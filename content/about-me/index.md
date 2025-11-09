@@ -1,7 +1,8 @@
----
-layout: layout.njk
-pageTitle: About me
----
++++
+title = "About Me"
+template = "page.html"
+date = 2020-04-09
++++
 
 <article class="article">
   <h1 class="article-title">About me</h1>
