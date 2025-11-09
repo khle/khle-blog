@@ -19,10 +19,10 @@
 
     <!-- Loop through the pages within the blog section ONLY -->
     {% for page in blog_section.pages %}
-    <span class="badge secondary">
+    <div class="badge secondary">
         <!-- Assuming blog posts have dates, no 'N/A Date' check needed -->
         {{ page.date | date(format="%Y-%m-%d") }}
-    </span>
+    </div>
       
     <a href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}
