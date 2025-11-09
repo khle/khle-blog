@@ -1,8 +1,7 @@
 [build]
-  command = "zola build"
-  
-  publish = "public"
+command = "zola build"  
+publish = "public"
 
 [build.environment]
-  ZOLA_VERSION = "0.21.0" 
+ZOLA_VERSION = "0.21.0" 
 
