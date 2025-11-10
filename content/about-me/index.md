@@ -32,6 +32,8 @@ You can find me elsewhere on the Internet:
   </div>
   <div class="col-3 col"></div>
 </div>
+	<a href="/contact-me/">Contact me</a>
+<div class="row">
 
-<script type="text/javascript" src="https://form.jotform.com/jsform/253127420532043"></script>
+</div>
 
